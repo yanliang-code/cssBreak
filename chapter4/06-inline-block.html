@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 800px;
+        height: 200px;
+        /* 
+            外层div 800px，内容有两个div，分别为200px、600px
+            正常不会换行，不过由于inline-block对外表现为文本
+            文本就是中、英文等，就会存在间隙
+            解决方法：将字体大小改为0，文字没有，间隙也就没有
+        */
+        font-size: 0;
+      }
+      /* 
+        由于外层通过font-size: 0;将代表行内元素的div字体设置为0，消除间隙
+        但是，div内还是需要显示字体的，所以需要在div设置会原来的font-size属性
+      */
+      .left {
+        font-size: 14px;
+        background: red;
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+      }
+      .right {
+        font-size: 14px;
+        background: blue;
+        display: inline-block;
+        width: 600px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 此处两个div之间由换行，导致两个div间有间隙，删除也可以达到去除间隙的效果 -->
+      <div class="left">左</div>
+      <div class="right">右</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+// 定义时，带单位，运算时也需要带单位
+@fontSize: 12px;
+@bgColor: red;
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    // 预处理器提供很多内置函数，lighten颜色变浅函数
+    background: lighten(@bgColor, 40%);
+
+    .nav {
+        font-size: @fontSize;
+    }
+
+    .content {
+        font-size: @fontSize + 2px;
+
+        &:hover {
+            background: @bgColor;
+        }
+    }
+}

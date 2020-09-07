@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .container {
+        background: red;
+        width: 400px;
+        margin: 20px;
+      }
+      .p1 {
+        background: green;
+        float: left;
+        width: 200px;
+        height: 50px;
+      }
+      /* 
+        清除浮动的伪元素
+        1.清楚浮动
+        2.块级
+        3.隐藏
+        4.高度取消
+      */
+      .container2::after {
+        content: 'aaa';
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 
+          span是行内样式，正常的话是无法设置宽高
+          由于使用float样式，形成“块”（BFC），导致宽高生效
+       -->
+      <span class="p1"> float </span>
+      <div class="p2">
+        很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字很长的文字
+      </div>
+    </div>
+    <!-- 
+        此处不加container2，可能会高度坍陷（由于内部元素脱离文档流，导致没有内容顶起外层元素）
+        1.可以简单加overflow：auto让其关注内部元素
+    -->
+    <div class="container container2">
+      <!-- 
+            在span元素内的字可以放下情况下，优先两个float样式的元素挨着向左靠；
+            在span元素放不下的情况下，最后一个float元素会向下掉
+            在float的元素宽度大于最外层的容器时，两个float元素纵向排列
+        -->
+      <span>写几个字</span>
+      <!-- <div>写几个字</div> -->
+      <span class="p1"> float </span>
+      <span class="p1"> float </span>
+    </div>
+    <div class="container" style="height: 200px; background: blue"></div>
+  </body>
+</html>

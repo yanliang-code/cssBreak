@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>inline</title>
+    <style>
+      /* 
+        1.行高不同，但是元素渲染的高度相同；
+        2.元素有底线、顶线，它们之间的高度就是文本所占有的区域
+        3.字母x的底线，将基线  baseline，默认是基于它对齐
+        4.line-height的高度由line box决定，line box由inline box中最高的最顶
+        最外层的div也同line box高度
+    */
+      span {
+        background: red;
+      }
+      .c1 {
+        line-height: 20px;
+      }
+      .c2 {
+        line-height: 8px;
+      }
+      .c3 {
+        line-height: 30px;
+      }
+      .c5 {
+        line-height: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span class="c1">inline box xfg中文</span>
+      <span class="c2">inline box</span>
+      <span class="c3">inline box</span>
+      inline box
+      <span class="c5">inline box</span>
+    </div>
+  </body>
+</html>

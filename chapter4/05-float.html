@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      /* 
+        两栏布局：
+        1.一个浮动元素，一个margin-left元素（left宽度为浮动元素的宽度）
+      */
+      .container {
+        width: 800px;
+        height: 200px;
+      }
+      .left {
+        background: red;
+        /* float:left; */
+        /* height:100%; */
+        width: 200px;
+        position: absolute;
+        height: 200px;
+      }
+      .right {
+        background: blue;
+        float: right;
+        width: 200px;
+        height: 100%;
+      }
+      .middle {
+        margin-left: 200px;
+        margin-right: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 先左右，再中间 -->
+      <div class="left">左</div>
+      <div class="right">右</div>
+      <div class="middle">中间</div>
+    </div>
+  </body>
+</html>

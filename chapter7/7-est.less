@@ -1,0 +1,43 @@
+// est会按需引入，全部引入也没有关系
+@import "est/all";
+
+@support-ie-version: 7;
+@use-autoprefixer: false;
+
+.global-reset();
+
+.box {
+    .inline-block(); // 行内块级
+    .opacity(60); // 透明度
+    height: 100px;
+    background: green;
+    margin: 10px;
+}
+
+.left {
+    float: left;
+    .clearfix(); // 清除浮动
+}
+
+
+.row {
+    .make-row(); //一行
+
+    .col {
+        .make-column(1/4); // 占整行的1/4，总共四列
+        background: red;
+        height: 100px;
+    }
+}
+
+.my-triangle {
+    margin: 100px;
+    // width:100px;
+    // height:200px;
+    // border: 1px solid red;
+}
+
+.my-triangle::after {
+    content: ' ';
+    .triangle(top left, 100px, red, side); // 绘制等腰直角三角形
+}

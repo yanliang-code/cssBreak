@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100px;
+        height: 100px;
+        background: red;
+        /* 
+            过渡动画（简写顺序）：
+            1.动画开始前停留的时长 transition-delay
+            2.动画属性 transition-property
+            3.时长 transition-duration
+            4.缓动 transition-timing-function
+        */
+        /* 指定多个属性动画 */
+        /* transition: width 1s, background 3s; */
+        transition: all 1s;
+        transition-timing-function: ease-in-out;
+        /* transition-timing-function: cubic-bezier(0.465, -0.460, 0.525, 1.435); */
+        /* transition-delay: 1s; */
+      }
+      .container:hover {
+        width: 800px;
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>

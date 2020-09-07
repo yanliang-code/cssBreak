@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>background</title>
+    <style>
+      body {
+        /* 背景色的4种写法 */
+        /* background: yellow; */
+        /* background: hsl(0, 100%, 50%, .3); */
+        /* background: #Ff0; */
+        /* background: rgb(0, 0, 120, .3); */
+      }
+      .c1 {
+        height: 90px;
+        /* background:rgba(255,0,0, .3); */
+        /* background: url(./test.png); */
+      }
+      .c2 {
+        height: 90px;
+        /* 线性渐变 左边开始  红色 - 绿色 */
+        /* background: -webkit-linear-gradient(left, red, green); */
+        /* background: linear-gradient(to right, red, green); */
+        /*
+            一般使用角度  角度变大，逆时针转
+            0度：由下到上
+            90度：由左到右
+            180度：由上到下
+        */
+        /* background: linear-gradient(90deg, red, green); */
+        /* 可指定具体位置显示什么颜色 */
+        /* background: linear-gradient(
+          135deg,
+          red 0,
+          green 10%,
+          yellow 50%,
+          blue 100%
+        ); */
+
+        /*
+            0 - 49.5%：透明的；
+            49.5% - 50.5%：绿色的
+            50.5% - 100%：透明的
+
+            两个线性背景进行叠加
+        */
+        background: linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 49.5%,
+            green 49.5%,
+            green 50.5%,
+            transparent 50.5%,
+            transparent 100%
+          ),
+          linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 49.5%,
+            red 49.5%,
+            red 50.5%,
+            transparent 50.5%,
+            transparent 100%
+          );
+        background-size: 30px 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+  </body>
+</html>

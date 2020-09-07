@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>border</title>
+    <style>
+      .c1 {
+        width: 400px;
+        height: 200px;
+        border: 1px solid red;
+        /* 实线 */
+        /* border:5px solid red; */
+        /* 点 */
+        border: 5px dotted red;
+        /* 虚线 */
+        /* border: 5px dashed red; */
+      }
+      .c2 {
+        width: 400px;
+        height: 200px;
+        /* border-width: 30px; */
+        border: 30px solid transparent;
+        /* 边框背景图 repeat 重复 round 四舍五入的重复*/
+        border-image: url(./border.png) 30 round;
+      }
+      .c3 {
+        width: 400px;
+        height: 200px;
+        /* 
+            边框四条边的交界处是斜切的，边框的大小不在盒子本身高宽上，
+            可以把盒子的高宽设置为0，会出现三角形的效果；此外，还可通过border-radius将其变成扇形
+        */
+        border-bottom: 30px solid red;
+        /* border-right: 30px solid blue; */
+        /* 左侧边框设置为透明色 */
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+  </body>
+</html>

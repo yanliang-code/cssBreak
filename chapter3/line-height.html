@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>line-height</title>
+    <style>
+      .cc1 {
+        font-size: 12px;
+      }
+      .cc2 {
+        font-size: 18px;
+      }
+      .cc3 {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        使用line-height实现垂直居中的效果，只要line-hieght大于大于当前元素的高度即可
+        line-height就会作用于外层元素，外层大于内层的高度会均匀分配在上下两部分
+    -->
+    <div style="border: solid 1px red">
+      <span
+        style="
+          background: blue;
+          color: #fff;
+          font-size: 20px;
+          line-height: 60px;
+        "
+      >
+        居中xfg&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      </span>
+    </div>
+    <!-- 
+        字体大小不同，是按照基线来对齐排列的
+        若想实现垂直具中，需要给三个行内元素使用vertical-align：middle
+        vertical-align：top、bottom 分别通过顶线、底线对齐（此处的顶线、底线不同于文字的顶、底）
+        vertical-align除此之外，还支持px，在基线的基础上进行px的偏移
+     -->
+    <div class="c1">
+      <span class="cc1">第一段</span>
+      <span class="cc2">第二段</span>
+      <span class="cc3">第三段</span>
+    </div>
+    <!-- 
+        img图片下方会有部分留白
+        由于img也是inline元素，基于基线对齐，所以基线和底线还有些距离的
+        解决方法：1.vertical-align：bottom  2.display：block
+     -->
+    <div style="background: red">
+      <span>文字</span>
+      <img src="test.png" />
+    </div>
+    <div>
+      <div style="float: left">
+        <span>第一段</span>
+      </div>
+      <div style="float: left">
+        <span>第二段</span>
+      </div>
+    </div>
+  </body>
+</html>

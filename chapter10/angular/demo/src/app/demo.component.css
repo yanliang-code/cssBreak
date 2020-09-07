@@ -1,0 +1,14 @@
+/* host代表的是此组件的根节点的位置 */
+:host {
+  display: block;
+  padding: 20px;
+}
+:host-context(h1) {
+  color: blue;
+}
+/* 经过Angular处理后，demo[ng-content-c1]会加上属性，
+变成独一无二的组件内样式，无法影响到其他组件使用同名demo 
+*/
+.demo {
+  color: red;
+}

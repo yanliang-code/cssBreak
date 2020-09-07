@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>checkbox</title>
+    <style>
+      .checkbox {
+      }
+      .checkbox input {
+        display: none;
+      }
+      /* id为checkbox的元素的后代元素标签为input的，给它同级下方元素标签为label的元素加的样式 */
+      /* 给了背景图，padding-left是给背景图显示的空间 */
+      .checkbox input + label {
+        background: url(./checkbox1.png) left center no-repeat;
+        background-size: 20px 20px;
+        padding-left: 20px;
+      }
+      /* 相对于上面，勾选框选中时生效，覆盖默认的checkbox1.png图片 */
+      .checkbox input:checked + label {
+        background-image: url(./checkbox2.png);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkbox">
+      <input type="checkbox" id="handsome" />
+      <label for="handsome">我很帅</label>
+    </div>
+  </body>
+</html>

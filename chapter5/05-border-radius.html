@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .container {
+        /* width: 100px;
+        height: 100px; */
+        width: 0;
+        height: 0;
+        background: red;
+        /* border: 10px solid green; */
+        /* 
+            使用百分比，加不加边框都可以正常显示成圆形图案
+            使用具体px，加边框相比于不加，需要额外增加px值
+        */
+        /* border-radius: 10px; */
+        /* border-radius: 50%; */
+        /* border: 50px solid green; */
+        /*
+            分别指定四个角的弧度 
+        */
+        /* border-top-left-radius: 100px 50px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; */
+        /*
+            分别指定四个角 水平方向、垂直方向的圆弧半径 
+        */
+        border-radius: 10px 10px 10px 10px / 20px 20px 20px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>

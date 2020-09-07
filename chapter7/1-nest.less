@@ -1,0 +1,26 @@
+// .\node_modules\.bin\lessc 1-nest.less 编译指定文件  
+// .\node_modules\.bin\lessc 1-nest.less > test.css 编译指定文件,将结果输出到test.css文件内
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+// 子元素嵌套
+.wrapper {
+    background: white;
+
+    // .wrapper .nav(选择器之间有空格)
+    .nav {
+        font-size: 12px;
+    }
+
+    .content {
+        font-size: 14px;
+
+        // .wrapper .content:hover(&:hover使其没有空格)
+        &:hover {
+            background: red;
+        }
+    }
+}

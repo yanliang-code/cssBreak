@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 400px;
+        height: 300px;
+        border: 1px solid red;
+        background: url(./panda.jpg);
+        /* 
+            background-size属性值
+            1.具体px 会拉伸图片
+            2.百分比 会拉伸图片
+            3.cover：覆盖容器，保证长宽比不变，多余的被hidden
+              contain：背景图完整显示，长宽比不变，未覆盖容器的部分空白
+        */
+        background-size: contain;
+        /* background-size: 200px; */
+        /* background-size: 70% 70%; */
+        /* background-size: cover; */
+
+        /* 
+            x、y轴图片小于容器是否重复
+        */
+        background-repeat: no-repeat;
+        /* background-repeat: repeat-x; */
+        /* 控制背景图的位置 */
+        background-position: center center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
