@@ -1,0 +1,129 @@
+1. HTML常见元素和理解
+   - head中的元素
+     - 不会在页面留下直接的内容，只表示页面上资源和信息
+     - 包括如下元素
+       - meta
+         - charset="utf-8" 字符集
+         - name="viewport" 视口（适配移动端第一步）
+         - content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"（宽度调整为当前设备的宽度）
+       - title
+       - style（为 HTML 文档定义样式信息，若需要链接外部样式表，使用link）
+       - link（链接一个外部样式表）
+       - script
+       - base
+         - href="/" 基础路径，所有资源加载都在此基础上
+   - body中的元素
+     - 直接会显示在页面上
+     - 包括如下元素
+       - div/section（区块）/article/aside/header/footer（div的语义不明确，可通过加role指定语义）
+       - p（表示段落）
+       - span/em/strong（行内样式，有些带有默认样式）
+       - table/thead/tbody/tr/td[colspan,rowspan合并单元格]（表格类元素）
+       - ul/ol/li/dl/dt/dd（列表类元素）
+       - a（a链接）
+         - href
+         - target（指定当前窗口还是新窗口）
+       - form[target,method,enctype]/input[type,value]/select > option[value]/textarea/button[type]
+       - img[src,alt]
+       - lable[for与表单项关联，点击label，相当于点击表单项]
+   - 如何理解HTML
+     - HTML就是一个“文档”，类似于word文档
+       - http://h5o.github.io/此网站算法可将网页转化文档模式，由此可看出网页语义化是否标准
+       - 网页语义化标准，利于搜索引擎、爬虫、阅读器获取信息
+       - 语义 === 结构
+     - 描述文档的”结构“
+     - 有区块（section）和大纲
+2. HTML版本
+   - HTML4/4.01(SGML) 编码写法随意，浏览器做大部分容错处理
+   - XHTML(XML) 编码写法严格
+     - 写法：D:\video\coding-164\chapter2\valid-xhtml.html
+   - HTML5（基于HTML4而产生）
+   - HTML5新增内容
+     - 新区块标签
+       - section（区块，会出现在大纲中）
+       - article（区块，会出现在大纲中）
+       - nav（导航，会出现在大纲中）
+       - aside（区块，不会出现在大纲中）
+     - 表单增强
+       - 日期、时间、搜索（input新支持）
+       - 表单验证（必填、长度等等，HTML5前版本都需要js实现）
+       - Placeholder 自动聚焦
+     - 其他
+       - header/footer 头尾
+         - 可以表示网站的头尾，也可以表示区块的头尾
+       - section/article 区域
+       - nav 导航
+       - aside 不重要内容
+       - em/strong 强调
+       - i icon 图标
+       - 新增许多供js调用的api
+3. HTML元素分类
+   - 按默认样式分类
+     - 块级block 
+       - 默认是一个方形，占据整行，不给其他元素留出空间
+       - 例如：div、p、section、aside、article
+     - 行内inline（内联）
+       - 形状不定（当前行不够，会换行，block则会整体换行），不会占据整行，会在一行中的某个位置；设置宽高无效
+       - 例如：i、em、strong
+     - 行内块级inline-block
+       - 对外是inline的表现，在一行的某个位置；对内是block 的表现，有自己的宽高
+       - 例如：select、input等表单项元素
+   - 按内容分类
+     - https://html.spec.whatwg.org/multipage/dom.html#phrasing-content
+     - ![2020-08-23_161552](D:\coding\cssBreak\md\mdPic\第二章\2020-08-23_161552.png)
+4. HTML元素嵌套关系
+   - 块级元素可以包含行内元素
+   - 块级元素不一定能包含块级元素
+     - 例如：p中无法包含div
+   - 行内元素一般不能包含块级元素
+     - 可以包含的，例如：a元素可以包含div（主要是由于a是在解析是会被拿出，就成了body下有div，所以可以包含）
+   - 详情参考HTML5内容模型
+5. HTML元素默认样式和定制化
+   - 默认样式的意义
+     - 编码简单
+   - 默认样式带来的问题
+     - 样式不符合要求
+     - 在预期之外
+   - CSS Reset（重置css，部分元素有自带样式）
+     - https://meyerweb.com/eric/tools/css/reset/
+   - 保证在所有浏览器上显示效果一致，不会进行css重置（不同于上方的思路）
+     - http://necolas.github.io/normalize.css/
+6. HTML面试真题解答
+   - doctype的意义是什么
+     - 让浏览器以标准模式渲染
+     - 让浏览器知道元素的合法性（根据声明确定HTML版本）
+   - HTML、XHTML、HTML5的关系
+     - HTML属于SGML
+     - XHTML属于XML，是HTML进行XML严格化的结果
+     - HTML5不属于SGML或XML，比XHTML宽松
+   - HMTL5有什么变化
+     - 新的语义化元素
+     - 表单增强
+     - 新的API（离线、音视频、图形、实时通信、本地存储、设备能力）
+     - 分类和嵌套变更
+   - em和i有什么区别
+     - em是语义化的标签，表强调（样式为斜体）
+     - i是纯样式的标签，表斜体
+     - HTML5中i不推荐使用，一般用作图标
+   - 语义化的意义是什么（简单说就是少用div，用指定的HTML元素）
+     - 开发者容易理解
+     - 机器容易理解结构（搜索、读屏、软件）
+     - 有利于SEO
+   - 哪些元素可以自闭合
+     - input
+     - img
+     - br  hr
+     - meta  link
+   - HTML和DOM的关系
+     - HTML是”死“的（字符串）
+     - DOM是浏览器根据HTML解析而来的，是活的（树形结构）
+   - property和attribute的区别
+     - property 特性（是浏览器通过定义HTML元素的字符串解析得来的，”活“的）
+     - atrribute 属性（写在HTML中的，”死“的）
+     - 上面的两个属性互相不同步
+   - form的作用有哪些
+     - 直接提交表单（需要有form）
+     - 使用submit/reset按钮（需要有form）
+     - 便于浏览器保存表单（需要有form）
+     - 第三方库可以整体提取值（需要有form）
+     - 第三方库可以进行表单验证（需要有form）

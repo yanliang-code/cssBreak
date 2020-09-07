@@ -1,0 +1,28 @@
+    /* 
+        定义变量
+        （目前只是部分浏览器支持，所以cssnext也纳入其中，在编译过程中解析成大部分浏览器都可解析的CSS）
+     */
+
+    /* 类似于CSS预处理中的mixin */
+    :root {
+
+        --mainColor: red;
+
+
+        --danger-theme: {
+            color: white;
+            background-color: red;
+        }
+
+        ;
+    }
+
+    a {
+        /* 使用变量 */
+        color: var(--mainColor);
+
+    }
+
+    .danger {
+        @apply --danger-theme;
+    }

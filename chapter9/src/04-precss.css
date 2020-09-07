@@ -1,0 +1,30 @@
+$blue: #056ef0;
+$column: 200px;
+
+/* 变量使用 */
+.menu {
+    width: calc(4 * $column);
+}
+
+.menu_link {
+    background: $blue;
+    width: $column;
+}
+
+/* 条件判断 */
+.notice--clear {
+    @if 3 < 5 {
+        background: green;
+    }
+
+    @else {
+        background: blue;
+    }
+}
+
+/* 循环 */
+@for $i from 1 to 3 {
+    .b-$i {
+        width: $(i)px;
+    }
+}
