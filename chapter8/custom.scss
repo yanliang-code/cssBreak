@@ -1,0 +1,5 @@
+// 此处会覆盖bootstrap样式
+$primary: green;
+// 直接引入bootstrap样式主入口
+// 可以将bootstrap内的各模块当成mixin，选择性引入
+@import './bootstrap-custom/scss/bootstrap';
