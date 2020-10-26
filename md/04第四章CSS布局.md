@@ -52,11 +52,11 @@
           - 按文档流布局（因为还占据着空间），偏移相对于本身进行的
         - absolute  
           - 脱离文档流（对其他元素的布局不会造成影响）
-          - 相对于最近的relative、absolute、fixed（不为static的position值）进行定位
+          - 相对于最近的relative、absolute、fixed（不为static的position值）祖先元素（若没有，为body）进行定位
           - 使用此样式的元素的高度使用百分比，依赖父元素的高度计算，父元素找法同上（float则就是代码编写时的父元素）
-        - fixed  
+        - fixed  r
           - 脱离文档流（相对于可视区域进行布局）
-        - 脱离文档流后可能出现元素重叠现象，可通过设置z-index调整显示的上下位置（elative、absolute、fixed都可以设置）
+        - 脱离文档流后可能出现元素重叠现象，可通过设置z-index调整显示的上下位置（relative、absolute、fixed都可以设置）
 
 
 
@@ -96,7 +96,7 @@
          }
          ```
 
-##### 五、CSS面试真题
+##### 四、CSS面试真题
 
 1. 实现两栏（三栏）布局方法
    - 表格布局
@@ -104,9 +104,9 @@
    - inline-block布局（间隙记得处理）
    - flexbox布局
 2. position：absolute / fixed有什么区别
-   - 前者相对于最近得absolute / relative / fixed
+   - 前者相对于最近absolute / relative / fixed 属性值的祖先元素（若没有，为body）进行定位
    - 后者相对于可视区域、屏幕（移动端）
-3. display: inline-block得间隙
+3. display: inline-block的间隙
    - 原因：字符间距
    - 解决：消灭字符（删除空白字符）和消灭间距（字体大小设置为0）
 4. 如何清楚浮动

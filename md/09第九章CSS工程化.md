@@ -43,7 +43,7 @@
        - 声明时需要指定浏览器版本  browsers: ['Firefox > 1']
        - 底层是依赖browserList，它是会去https://caniuse.com/此网站获取信息
          - ![2020-09-04_210039](D:\coding\cssBreak\md\mdPic\第九章\2020-09-04_210039.png)
-     - postcss-impor 插件 （chapter9\src\02-plugins-main.css）
+     - postcss-import 插件 （chapter9\src\02-plugins-main.css）
        - 通过遍历依赖关系，来合并代码，最终生成一个css文件
      - cssnext 插件 （chapter9\src\02-plugins-module.css）
        - 作用类似于JS中的babel，让CSS新特性编译目前浏览器兼容的写法
@@ -52,7 +52,7 @@
        - 除去重复属性
        - 合并可以合并的属性写法
        - 去除空格以及回车，减小代码体积
-     - press插件 （chapter9\src\04-precss.css）
+     - precss插件 （chapter9\src\04-precss.css）
        - 与SCSS、Less预处理能力类似
          - 变量
          - 条件（if）
@@ -67,21 +67,20 @@
 
    1. PostCSS本身没有构建能力，支持的工具如下
 
-      - cli命令行工具
-   - webpack  postcss-loader
+      - cli命令行工具（.\node_modules\.bin\postcss .\src\01-postcss.css -o .\build\01-postcss.css）
+      - webpack  postcss-loader
       - Gulp  gulp-postcss
       - Grunt  grunt-postcss
       - Rollup  rollup-postcss
       - ......
-   
    2. Gulp应用PostCSS
-   
+
       - chapter9\gulpfile.js
-   
+
       - 使用此命令gulp postcss（需要-g 全局安装gulp）
-   
+
    3. webpack应用PostCSS
-   
+
       - webpack核心思想
         - JS是整个应用的核心入口
         - 一切资源都有JS管理依赖
@@ -101,22 +100,22 @@
             - 需要加载完JS，才能加载CSS样式 
               - 打包时单独生成CSS，使用link引入，不通过style-loader注入
               - 使用extract-text-webpack-plugin插件
+
    
-   
-   
+
    ##### 四、小结
-   
+
    1. css-loader：将CSS转化为JS，从而实现JS管理CSS的想法
    2. style-loader：将JS样式插入html的head中
    3. ExtractTextPlugin：将CSS从JS中提取出来（不需要JS去插入CSS样式，CSS样式与JS一同加载）
    4. css modules：解决CSS命名冲突的问题（将类选择器名转化为uuid，同时提供换名前后的关系映射表）
    5. less-loader、scss-loader各类预处理器（先将其转化为CSS，再使用上面的插件、加载器）
    6. postcss-loader  PostCSS处理（此加载器搭配其他插件也可达到上面预处理器的效果）
+
    
-   
-   
+
    ##### 五、CSS面试真题
-   
+
    1. 如何解决CSS模块化问题（必须编译）
       - Less、SCSS等CSS预处理器
       - PostCSS插件（postcss-import / precss 等）
@@ -136,13 +135,13 @@
       - JS作为入口，管理资源有天然优势
       - 将组件的结构、样式、行为封装到一起，增强内聚力，减少耦合
       - 可以做更多的处理（webpack）
+
    
-   
-   
+
    SCSS、Less：自定义语法   ----  CSS语法
-   
+
    PostCSS结合其他插件：CSS语法（除cssnext、precss这类需要使用自定义语法的）  ----    CSS语法
-   
+
    
 
 

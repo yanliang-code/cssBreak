@@ -20,16 +20,16 @@
    - JS组件
      - dropdown（下拉）
      - modal（弹出框）等等
-     - 内部依赖项
-       - jQuery
-       - Popper.js（弹出框）
-       - bootstrap.js
-     - 使用方式
-       - 基于data-*属性   chapter8\3-js.html
-       - 基于JS  API
-     - 使用缺点
-       - 使用要严格按照格式来
-       - 必须引入指定第三方js
+       - 内部依赖项
+         - jQuery
+         - Popper.js（弹出框）
+         - bootstrap.js
+       - 使用方式
+         - 基于data-*属性   chapter8\3-js.html
+         - 基于JS  API
+       - 使用缺点
+         - 使用要严格按照格式来
+         - 必须引入指定第三方js
      - 适用于比较临时性的项目，需要快速成型并且不再迭代升级的
 3. Bootstrap响应式布局  chapter8\2-responsive.html
    - ![2020-09-03_210713](D:\coding\cssBreak\md\mdPic\第八章\2020-09-03_210713.png)

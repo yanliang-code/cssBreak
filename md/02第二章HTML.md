@@ -89,7 +89,7 @@
    - 保证在所有浏览器上显示效果一致，不会进行css重置（不同于上方的思路）
      - http://necolas.github.io/normalize.css/
 6. HTML面试真题解答
-   - doctype的意义是什么
+   - doctype的意义是什么（https://blog.csdn.net/sunhl951/article/details/79763727）
      - 让浏览器以标准模式渲染
      - 让浏览器知道元素的合法性（根据声明确定HTML版本）
    - HTML、XHTML、HTML5的关系

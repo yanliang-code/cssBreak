@@ -12,9 +12,9 @@
 1. box-shadow  chapter5\01-box-shadow.html
    - 会在原图基础上在指定位置显示一个相同的图形，可以通过改变属性控制显示效果（相当于复制）
      - box-shadow：64px 64px 24px 40px rgba(0, 0, 0, 0.4)
-     - 64px 64px   原图相对于x、y轴的偏移量
-     - 24px   外层模糊的阴影效果
-     - 40px  偏移后外层实心效果范围
+     - 64px 64px   复制图相对于原图在x、y轴方向上的偏移量
+     - 24px   外层模糊的阴影效果（上右下左都会存在24px的模糊颜色效果）
+     - 40px  外层实心效果范围（上右下左都会存在40px的实心颜色效果）
      - ![2020-08-30_084035](D:\coding\cssBreak\md\mdPic\第五章\2020-08-30_084035.png)
    - 应用
      - 营造层次感（立体感）  例如：内凹外凸的按钮
@@ -41,8 +41,8 @@
    - 背景图片尺寸适应  chapter5\07-background-size.html
 5. clip-path   chapter5\08-clip-path.html
    - 对容器进行裁剪
-   - 常见几何图形（指定关键字）
-   - 自定义路径（指定id，html设置svg路径）
+     - 常见几何图形（指定关键字）
+     - 自定义路径（指定id，html设置svg路径）
    - 浏览器兼容性不太好
 6. 2D、3D变换   chapter5\09-3d.html
    - transform
